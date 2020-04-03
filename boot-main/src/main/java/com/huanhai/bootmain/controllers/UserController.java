@@ -15,7 +15,7 @@ public class UserController {
     @RequestMapping("/login")
      public String login(String username, String pwd){
         System.out.println(username+" "+pwd+(redisUtil.get("name")));
-
+        redisUtil.set("name",username);
          return "index";
      }
     @RequestMapping(value = "/logOut",produces = "text/html;charset=utf-8")
